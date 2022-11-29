@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+
+  include("configs/dbconnect.php");
+
+  //$user_data = check_login($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
+  
+
     <div class="container">
-        <form method="post" autocomplete="on">
+        <form method="post" autocomplete="on" action="configs/dbconnect.php">
           <!--First name-->
               <div class="box">
                     <label for="firstName" class="fl fontLabel"> First Name: </label>
@@ -27,10 +38,10 @@
   
           <!--Second name-->
               <div class="box">
-            <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
+            <label for="lastNmae" class="fl fontLabel"> Seconed Name: </label>
                   <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
                   <div class="fr">
-                          <input type="text" required name="secondName"
+                          <input type="text" required name="lastName"
                 placeholder="Last Name" class="textBox">
                   </div>
                   <div class="clr"></div>
@@ -43,7 +54,7 @@
             <label for="phone" class="fl fontLabel"> Phone No.: </label>
                   <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
                   <div class="fr">
-                          <input type="text" required name="phoneNo" maxlength="10" placeholder="Phone No." class="textBox">
+                          <input type="text" required name="number" maxlength="10" placeholder="Phone No." class="textBox">
                   </div>
                   <div class="clr"></div>
               </div>
@@ -76,8 +87,8 @@
               <!---Gender----->
               <div class="box radio">
             <label for="gender" class="fl fontLabel"> Gender: </label>
-                      <input type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
-                      <input type="radio" name="Gender" value="Female" required> Female
+                      <input type="radio" name="gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
+                      <input type="radio" name="gender" value="Female" required> Female
               </div>
               <!---Gender--->
   
@@ -94,11 +105,13 @@
 
               <!--Log in link----->
               <div class="box login-link-box">
-                <p class="bottom-text">Already have an account? <a href="login.html" class="login">Login</a></p>
+                <p class="bottom-text">Already have an account? <a href="login.php" class="login">Login</a></p>
               </div>
               
               <!--Log in link----->
         </form>
     </div>
+
+    
 </body>
 </html>
