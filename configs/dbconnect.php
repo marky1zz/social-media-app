@@ -21,9 +21,11 @@ if(isset($_POST['firstName'])) {
   $password = $_POST['password'];
   $gender = $_POST['gender'];
   
+  // Register user
   // inserting data in to DB
   $sql = "INSERT INTO user_details (name, last_name, number, email, password, gender) VALUES ('$firstName', '$lastName', '$number', '$email', '$password', '$gender')";
   $result = mysqli_query($conn, $sql);
+  header("Location: ../login.php");
 }
 $sql = null;
 
@@ -43,7 +45,7 @@ function checkLogin($conn) {
           header("Location: home.php");
           die();
         } else {
-          echo $user['password'];
+          echo 'wrong email or ', $user['password'];
         }
   }
 }

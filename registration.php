@@ -1,27 +1,29 @@
 <?php 
   session_start();
 
-  include("configs/dbconnect.php");
-
+  
   //$user_data = check_login($conn);
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-
-  
-
+  </head>
+  <body>
+    
+    
+    
     <div class="container">
-        <form method="post" autocomplete="on" action="configs/dbconnect.php">
+      <form method="post" autocomplete="on" action="configs/dbconnect.php">
+        <?php
+          include("configs/dbconnect.php");
+        ?>
           <!--First name-->
               <div class="box">
                     <label for="firstName" class="fl fontLabel"> First Name: </label>
